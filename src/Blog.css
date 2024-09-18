@@ -1,0 +1,79 @@
+/* Blog.css */
+.header-blog {
+  /* Estilo para o cabeçalho na página do blog */
+  background-color: #000a14; /* Cor específica para a página do blog */
+}
+
+.blog-heading {
+  background-color: #000a14;
+  width: 100%;
+  height: 75vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-title {
+  text-align: center;
+  max-width: 120vh;
+  color: #ffffff;
+  font-size: 2em;
+  text-align: left;
+  padding: 3em;
+}
+
+.blog-body {
+  padding: 3em;
+  font-family: "Inter", sans-serif;
+  max-width: 120vh;
+  max-height: auto;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  height: auto; /* Mantém a proporção da imagem */
+}
+
+@media (max-width: 768px) {
+  .blog-title {
+    font-size: 1.5em; /* Tamanho da fonte do título reduzido em telas menores */
+    padding: 1.5em; /* Reduzir padding em telas menores */
+  }
+
+  .blog-body {
+    padding: 1.5em; /* Reduzir padding em telas menores */
+  }
+}
+
+.blog-content {
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: white;
+}
+
+.blog1 h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.blog1 h2 {
+  font-size: 1.5em;
+  margin-top: 1em;
+}
+
+.blog1 p {
+  margin-bottom: 1em;
+}
+
+.blog1 ul {
+  margin: 1em 0;
+  padding-left: 20px;
+}
+
+.blog1 li {
+  margin-bottom: 0.5em;
+}

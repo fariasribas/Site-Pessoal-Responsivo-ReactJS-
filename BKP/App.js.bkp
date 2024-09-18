@@ -1,0 +1,295 @@
+import React from "react";
+import Header from "./Header";
+import "./styles.css";
+import "@fortawesome/fontawesome-free/css/all.min.css"; // Importa o Font Awesome
+
+window.addEventListener("scroll", function () {
+  const images = document.querySelectorAll(
+    ".image-gallery1 img, .image-gallery2 img"
+  );
+  const scrollPosition = window.scrollY + window.innerHeight;
+
+  images.forEach((img) => {
+    const imageTop = img.offsetTop;
+    const imageHeight = img.offsetHeight;
+
+    // Adiciona ou remove a classe "visible" conforme a imagem entra ou sai da viewport
+    if (scrollPosition > imageTop + imageHeight / 1.5) {
+      img.classList.add("visible");
+    } else {
+      img.classList.remove("visible");
+    }
+  });
+});
+
+const greetings = ["Olá!", "Hello!", "Hola!", "Bonjour!", "Hallo!", "Ciao!"];
+let currentIndex = 0;
+
+function changeGreeting() {
+  const greetingElement = document.getElementById("greeting");
+  greetingElement.textContent = greetings[currentIndex];
+  currentIndex = (currentIndex + 1) % greetings.length;
+}
+
+// Muda a saudação a cada 2 segundos
+setInterval(changeGreeting, 1980);
+
+document.addEventListener("DOMContentLoaded", function () {
+  const words = [
+    "Webmaster",
+    "Programação",
+    "SEO",
+    "Marketing",
+    "Apps",
+    "React Native",
+    "Javascript",
+    "ReactJS",
+  ];
+  const greetingElement = document.getElementById("greeting1");
+  let index = 0;
+
+  function changeWord() {
+    greetingElement.textContent = words[index];
+    index = (index + 1) % words.length;
+  }
+
+  setInterval(changeWord, 1980); // Muda a palavra a cada 2 segundos
+});
+
+const App = () => {
+  return (
+    <div className="App">
+      <Header />
+
+      <div id="section1" className="section1">
+        <div className="tituloprincipal">
+          <h1 id="greeting1">Farias Ribas</h1>
+        </div>
+      </div>
+
+      <div id="sobre" className="section2">
+        <div className="heading">
+          <span className="subheading">Sobre</span>
+          <h2>Sobre nós</h2>
+        </div>
+        <div className="image-container">
+          <img
+            src="/images/bkground.jpg"
+            alt="Imagem da Seção 2"
+            class="zooming"
+          />
+        </div>
+        <div className="text-content">
+          <p>
+            In this time of enormous change where media is more important than
+            ever before, people are longing for humanity - for real connection,
+            for truth and for what binds us together.
+            <br />
+            <br />
+            Our unique understanding of the intersection of culture, content,
+            data, and technology powers how we build brands out of every moment
+            of connection. For today, and for tomorrow.
+          </p>
+          <a className="linksobre" href="/sobre">
+            Sobre
+          </a>
+        </div>
+      </div>
+
+      <div id="section3" className="section3">
+        <div className="image-gallery2">
+          <div className="heading1">
+            <span className="subheading1">Sobre</span>
+            <h2>Sobre nós</h2>
+          </div>
+          <a href="https://www.google.com" target="_blank">
+            <img
+              src="/images/bkground.jpg"
+              alt="Google"
+              class="fade-in-image"
+            />
+          </a>
+
+          <a href="https://www.google.com" target="_blank">
+            <img
+              src="/images/bkground.jpg"
+              alt="Google"
+              class="fade-in-image"
+            />
+          </a>
+        </div>
+
+        <div className="image-gallery1">
+          <a href="https://www.google.com" target="_blank">
+            <img
+              src="/images/bkground.jpg"
+              alt="Google"
+              class="fade-in-image"
+            />
+          </a>
+
+          <a href="https://www.google.com" target="_blank">
+            <img
+              src="/images/bkground.jpg"
+              alt="Google"
+              class="fade-in-image"
+            />
+          </a>
+        </div>
+      </div>
+      <div className="section4">
+        <div className="grid-item1">
+          <div className="heading3">
+            <span className="subheading3">Sobre</span>
+            <h2>Sobre nós</h2>
+          </div>
+          <hr class="separator" />
+        </div>
+
+        <a className="grid-item2" href="https://www.google.com">
+          <div className="blog-name-div">
+            <div className="blog-name-div-image">
+              <img
+                src="/images/bkground.jpg"
+                alt="Imagem 4"
+                className="blog-image"
+              />
+            </div>
+            <div class="textolink">
+              <h3>meu link vai pro google</h3>
+            </div>
+          </div>
+          <hr className="separator" />
+        </a>
+        <a className="grid-item2" href="https://www.google.com">
+          <div className="blog-name-div">
+            <div className="blog-name-div-image">
+              <img
+                src="/images/bkground.jpg"
+                alt="Imagem 4"
+                className="blog-image"
+              />
+            </div>
+            <div class="textolink">
+              <h3>meu link vai pro google</h3>
+            </div>
+          </div>
+          <hr className="separator" />
+        </a>
+        <a className="grid-item2" href="https://www.google.com">
+          <div className="blog-name-div">
+            <div className="blog-name-div-image">
+              <img
+                src="/images/bkground.jpg"
+                alt="Imagem 4"
+                className="blog-image"
+              />
+            </div>
+            <div class="textolink">
+              <h3>meu link vai pro google</h3>
+            </div>
+          </div>
+          <hr className="separator" />
+        </a>
+        <div className="grid-item5"></div>
+      </div>
+
+      <div id="contato" className="section5">
+        <div className="heading4">
+          <h2 id="greeting">Oi!</h2>
+          <span className="subheading4">
+            <a href="https://www.google.com">Contato</a>
+          </span>
+        </div>
+      </div>
+      <div id="section6" className="section6">
+        <div className="footerlogo">
+          <div className="footer-contact">
+            <ul className="contact-list">
+              <li>
+                <a href="https://wa.me/5511999999999" className="contact-item">
+                  <i className="fab fa-whatsapp"></i> WhatsApp
+                </a>
+              </li>
+              <li>
+                <a href="tel:+5511888888888" className="contact-item">
+                  <i className="fas fa-phone"></i> (11) 88888-8888
+                </a>
+              </li>
+              <li>
+                <a href="mailto:email@exemplo.com" className="contact-item">
+                  <i className="fas fa-envelope"></i> email@exemplo.com
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="footerendereco">
+          <p className="address-line">
+            <b>São Paulo | Brasil</b>
+          </p>
+          <p className="address-line">Nazaré Paulista</p>
+          <p className="address-line">
+            <b>2K24</b>
+          </p>
+        </div>
+        <div className="footerindex">
+          <ul className="footer-nav">
+            <li>
+              <a href="/apps" className="nav-link">
+                Apps
+              </a>
+            </li>
+            <li>
+              <a href="/blog" className="nav-link">
+                Blog
+              </a>
+            </li>
+            <li>
+              <a href="#contato" className="nav-link">
+                Contato
+              </a>
+            </li>
+            <li>
+              <a href="#sobre" className="nav-link">
+                Sobre
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="footersocialmedia">
+          <div className="social-media-text">Siga-nos nas redes sociais</div>
+          <div className="social-icons">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default App;

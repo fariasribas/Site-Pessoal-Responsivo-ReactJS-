@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
+import Header from "./Header";
+import HomePage from "./HomePage";
+import BlogList from "./BlogList";
+import Blog from "./Blog"; // Importa o componente Blog
+import "./styles.css";
+import "@fortawesome/fontawesome-free/css/all.min.css"; // Importa o Font Awesome
+import BackToHomeButton from "./BackToHomeButton";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <ConditionalBackToHomeButton />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/blog" element={<BlogList />} />
+        <Route path="/blog/:postId" element={<Blog />} />
+      </Routes>
+    </Router>
   );
-}
+};
+
+// Componente para renderizar o botão condicionalmente
+const ConditionalBackToHomeButton = () => {
+  const location = useLocation();
+
+  // Verifica se a rota atual é a homepage
+  const isHomePage = location.pathname === "/";
+
+  return !isHomePage ? <BackToHomeButton /> : null;
+};
 
 export default App;

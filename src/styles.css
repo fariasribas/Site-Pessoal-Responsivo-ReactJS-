@@ -1,0 +1,825 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: #ffffff;
+}
+
+.App {
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0); /* Transparente */
+  padding: 1rem 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  transition: transform 0.4s ease-in;
+}
+
+.header-d {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0); /* Transparente */
+  padding: 1rem 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  transition: background-color 1s ease;
+  transition: transform 0.4s ease-in;
+}
+
+.header.hidden {
+  transform: translateY(-100%);
+}
+
+.header-scrolled {
+  background-color: #000a14;
+  transition: transform 0.4s ease-in;
+
+  /* A cor do fundo quando fora da seção 1 */
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.nav button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #fff; /* Cor do texto */
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav button:hover {
+  color: #0dceda; /* Cor do texto ao passar o mouse */
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2em;
+}
+
+.section1 {
+  height: 130vh;
+  background-image: url("/public/images/background-site-blog-farias-ribas.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tituloprincipal {
+  font-size: 3em;
+  display: flex;
+  flex-direction: column;
+  font-family: "newamsterdam";
+  color: white;
+  text-align: center;
+  position: absolute; /* Posicionamento absoluto */
+  top: 50%; /* Coloca o topo do título no meio da tela */
+  left: 50%; /* Coloca o título no centro horizontal */
+  transform: translate(-50%, -50%); /* Centraliza vertical e horizontalmente */
+  width: 100%; /* Opcional: garante que o conteúdo ocupe a largura total */
+}
+
+#greeting1 {
+  display: inline-block;
+  font-size: 2em;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 1px 20px;
+  border-radius: 4px;
+  animation: slide 2s ease-in-out infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+  }
+  25% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.subheading4 {
+  font-size: 20px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .tituloprincipal {
+    font-size: 1em; /* Ajusta a fonte no mobile */
+  }
+}
+
+.section2 {
+  display: grid;
+  height: 120vh;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 25% 55%;
+  align-items: center;
+  justify-content: center;
+  background-color: #000a14;
+  padding: 3em;
+  padding-bottom: 0;
+}
+
+.subheading {
+  font-size: 20px;
+  margin: 0; /* Remove todas as margens */
+}
+
+.heading {
+  font-size: 3em;
+  display: flex;
+  flex-direction: column;
+  font-family: "newamsterdam";
+  color: white;
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: left;
+  margin-left: 4%;
+}
+
+.heading h2 {
+  margin: 0; /* Remove a margem padrão do h2 */
+}
+
+@font-face {
+  font-family: "newamsterdam";
+  src: url("./assets/fonts/NewAmsterdam-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.image-container {
+  grid-column: 1;
+  grid-row: 2;
+  margin-left: 4%;
+  width: 85%;
+  justify-self: left; /* Centraliza horizontalmente */
+  align-self: flex-end; /* Centraliza verticalmente */
+  overflow: hidden;
+  /* Garante que a imagem não ultrapasse os limites do contêiner */
+}
+
+.image-container img {
+  width: 100%; /* Faz com que a imagem ocupe todo o contêiner */
+  height: auto; /* Mantém a proporção da imagem */
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.zooming:hover {
+  transform: scale(1.07); /* Aumenta a imagem em 10% ao passar o mouse */
+}
+
+.text-content {
+  justify-self: right;
+  align-self: flex-end;
+  margin-right: 4%;
+  grid-column: 2;
+  grid-row: 2;
+  width: 55%; /* Ajuste conforme necessário */
+  color: #fff; /* Cor do texto */
+}
+
+.linksobre {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 22px;
+  color: white;
+}
+.containersection3 {
+  background-color: #000a14;
+}
+.section3 {
+  margin-top: 6vh;
+  padding: 3em;
+  height: 200vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Distribui as galerias com espaço entre elas */
+  align-items: top; /* Centraliza as galerias verticalmente */
+  gap: 15vh;
+  border-bottom-left-radius: 40%;
+}
+
+.subheading1 {
+  font-size: 20px;
+  margin: 0; /* Remove todas as margens */
+}
+
+.heading1 {
+  font-size: 3em;
+  display: flex;
+  flex-direction: column;
+  font-family: "newamsterdam";
+  color: rgb(0, 0, 0);
+  margin-left: 4%;
+  align-items: flex-start;
+  width: 93%;
+}
+
+.heading1 h2 {
+  margin: 0; /* Remove a margem padrão do h2 */
+}
+
+.image-gallery2 {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  gap: 3em;
+}
+
+.image-gallery1 {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  gap: 3em;
+}
+.image-gallery2 {
+  align-items: flex-end; /* Alinha o conteúdo ao lado direito */
+}
+
+.image-gallery1 {
+  align-items: flex-start; /* Alinha o conteúdo ao lado esquerdo */
+}
+
+.image-gallery2 a,
+.image-gallery1 a {
+  display: block;
+  width: 90%; /* Mantém o tamanho das imagens */
+}
+
+.image-gallery2 img,
+.image-gallery1 img {
+  width: 100%;
+  border-radius: 25px;
+}
+
+.image-gallery2 img:hover {
+  transform: rotate(5deg);
+}
+.image-gallery1 img:hover {
+  transform: rotate(-5deg);
+}
+
+.fade-in-image {
+  width: 420px;
+  opacity: 0.5; /* Opacidade inicial */
+  transition: transform 1s ease, opacity 0.5s ease;
+  border-radius: 6px;
+}
+
+@media (max-width: 1300px) {
+  .section3 {
+    border-bottom-left-radius: 40%;
+    height: auto;
+  }
+}
+@media (max-width: 1200px) {
+  .section3 {
+    border-bottom-left-radius: 0%;
+    height: auto;
+    margin-bottom: 7vh;
+  }
+}
+@media (max-width: 768px) {
+  .section3 {
+    flex-direction: column; /* Muda a direção para coluna */
+    height: auto;
+    margin-top: 0vh;
+    margin-bottom: 7vh;
+    gap: 3em;
+    padding: 1.5em;
+    /* Ajusta o espaçamento entre as galerias */
+  }
+
+  .image-gallery1,
+  .image-gallery2 {
+    width: 100%; /* Ocupa 100% da largura no mobile */
+    align-items: center;
+    gap: 3em;
+    /* Centraliza as imagens no mobile */
+  }
+
+  .image-gallery1 img,
+  .image-gallery2 img {
+    width: 100%;
+    /* Imagens ocupam 100% da largura da galeria no mobile */
+  }
+}
+
+.visible {
+  opacity: 1; /* Opacidade total */
+  transform: scale(1.08);
+  transform: rotate(-5deg);
+  /* Aumenta ligeiramente o tamanho */
+}
+
+.visible1 {
+  opacity: 1; /* Opacidade total */
+  transform: scale(1.08);
+  transform: rotate(5deg);
+  /* Aumenta ligeiramente o tamanho */
+}
+
+/* Estilos para responsividade */
+@media (max-width: 768px) {
+  .header {
+    padding: 1.5rem 0; /* Aumenta o padding para uma maior espessura no header */
+  }
+
+  .nav button {
+    font-size: 1.5rem; /* Aumenta o tamanho da fonte dos botões em telas menores */
+  }
+
+  .section1 {
+    font-size: 1.5em;
+  }
+
+  .image-container {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem; /* Espaço entre a imagem e o texto */
+  }
+
+  .section2 {
+    display: flex;
+    flex-direction: column; /* Organiza os itens verticalmente */
+    padding: 1.5em;
+    gap: 2em; /* Espaçamento entre os itens */
+    align-items: flex-start;
+    box-sizing: border-box; /* Alinha os itens à esquerda */
+  }
+
+  /* Certifique-se de que a imagem e o texto estejam alinhados corretamente dentro da seção */
+  .section2 .image-container, /* Ajuste para o contêiner da imagem */
+  .section2 .text-content {
+    /* Ajuste para o contêiner do texto */
+    width: 100%; /* Garante que os itens ocupem toda a largura disponível */
+  }
+
+  .section2 .image-container {
+    display: flex;
+    justify-content: center; /* Centraliza a imagem horizontalmente */
+    align-items: center;
+    margin-right: 0px; /* Alinha a imagem verticalmente */
+  }
+
+  .section2 .text-content {
+    display: flex;
+    flex-direction: column; /* Empilha o texto verticalmente */
+    align-items: flex-start;
+    margin-right: 0px;
+  }
+  .section2 .heading {
+    margin-left: 0px;
+    /* Alinha o texto à esquerda */
+  }
+}
+
+.section4 {
+  background-color: #000a14;
+  height: 150vh;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 1fr 1fr 1fr 1fr; /* Ajusta a altura de cada linha conforme o conteúdo */
+  padding: 4em;
+  gap: 1em; /* Espaço entre as linhas */
+  padding-bottom: 0;
+}
+
+.subheading3 {
+  font-size: 20px;
+  margin: 0; /* Remove todas as margens */
+}
+
+.heading3 {
+  font-size: 3em;
+  display: flex;
+  flex-direction: column;
+  font-family: "newamsterdam";
+  color: rgb(255, 255, 255);
+  width: 93%;
+  align-items: flex-start; /* Alinha itens ao início do contêiner */
+  justify-content: flex-start;
+  margin-bottom: 30px;
+}
+
+.heading3 h2 {
+  margin: 0;
+  text-align: left; /* Remove a margem padrão do h2 */
+}
+.grid-item1 {
+  display: grid;
+}
+
+.grid-item2 {
+  display: grid;
+  text-decoration: none;
+}
+
+.blog-image {
+  width: min(18vw, 200px);
+  flex-shrink: 0;
+  transition: transform 0.6s ease;
+}
+
+.blog-image:hover {
+  transform: scale(1.1); /* Aumenta a imagem em 10% ao passar o mouse */
+}
+
+.blog-name-div {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  justify-items: flex-start;
+  gap: 4%;
+}
+
+.blog-name-div-image {
+  gap: 0px;
+  flex-direction: row;
+  align-self: center;
+  display: flex;
+  overflow: hidden;
+}
+
+.textolink {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: white;
+  align-self: flex-end;
+  transition: color 0.4s ease-in-out; /* Use 'transition' para animar a mudança de cor */
+}
+
+.textolink:hover {
+  color: #0dceda;
+}
+
+.grid-item3 {
+  display: grid;
+}
+.grid-item4 {
+  display: grid;
+}
+.grid-item5 {
+  display: grid;
+}
+.separator {
+  display: flex;
+  align-self: flex-end;
+  border: 0;
+  border-bottom: 1px solid #ffffff;
+  margin: 0; /* Remove a margem para que a linha fique no topo do container */
+}
+
+@media (max-width: 768px) {
+  .section4 {
+    grid-template-columns: 1fr; /* Usa uma coluna em telas menores */
+    grid-template-rows: auto;
+    height: auto; /* Ajusta as linhas automaticamente */
+    padding: 2em; /* Opcional: ajuste o padding se necessário */
+    gap: 2em;
+    /* Ajusta o espaçamento entre os itens */
+  }
+
+  .grid-item1,
+  .grid-item2,
+  .grid-item3,
+  .grid-item4,
+  .grid-item5 {
+    justify-items: center; /* Centraliza os itens na grid para telas menores */
+    text-align: center; /* Centraliza o texto nos itens */
+  }
+
+  .blog-name-div {
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: center; /* Centraliza os itens */
+    gap: 1em; /* Ajusta o espaçamento entre os itens */
+  }
+
+  .blog-image {
+    width: 100%; /* Ocupa 100% da largura disponível em telas menores */
+    margin-bottom: 1em; /* Adiciona um espaçamento entre a imagem e o texto */
+  }
+
+  .separator {
+    width: 100%; /* A linha separadora ocupa toda a largura disponível */
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 1.5rem 0; /* Aumenta ainda mais o padding para dispositivos muito pequenos */
+  }
+
+  .nav button {
+    font-size: 1.1rem; /* Aumenta ainda mais o tamanho da fonte dos botões em dispositivos muito pequenos */
+  }
+
+  .section1 {
+    font-size: 1.2em;
+  }
+}
+
+.section5 {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2em;
+  background-color: #ffffff;
+}
+
+.subheading4 {
+  font-size: 35px;
+  margin: 0; /* Remove todas as margens */
+  text-decoration: underline;
+  transition: color 0.3s ease-in-out; /* Transição aplicada ao texto da subheading */
+}
+
+.subheading4 a {
+  color: rgb(0, 0, 0); /* Cor para links normais */
+  text-decoration: underline; /* Remover sublinhado padrão de links */
+  transition: color 0.3s ease-in-out; /* Transição aplicada ao link */
+}
+
+.subheading4 a:hover {
+  color: #0dceda; /* Cor para links ao passar o mouse */
+}
+
+.subheading4 a:visited {
+  color: rgb(0, 0, 0); /* Cor para links visitados */
+}
+
+.subheading4 a:visited:hover {
+  color: #0dceda; /* Cor para links visitados ao passar o mouse */
+}
+
+.heading4 {
+  font-size: 3em;
+  display: flex;
+  flex-direction: column;
+  font-family: "newamsterdam";
+  color: rgb(0, 0, 0);
+  width: 100%;
+  align-items: center; /* Alinha itens ao início do contêiner */
+}
+
+.heading4 h2 {
+  margin: 0; /* Remove a margem padrão do h2 */
+}
+
+@media (max-width: 600px) {
+  .section5 {
+    height: auto;
+    padding: 1em;
+  }
+}
+.section6 {
+  height: 35vh;
+  display: grid;
+  grid-template-columns: 1.1fr repeat(3, 1fr); /* Cria 4 colunas iguais */
+  font-size: 2em;
+  background-color: #000a14;
+  padding-left: 3em;
+  padding-top: 15vh;
+  padding-right: 3em;
+  padding-bottom: 2vh;
+  gap: 2em; /* Espaçamento entre as colunas, ajuste conforme necessário */
+  align-items: top;
+}
+
+.footer-contact {
+  text-align: left;
+  justify-self: center;
+  border-top: 2px solid #ccc;
+}
+
+.contact-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerendereco {
+  border-top: 2px solid #ccc;
+  text-align: left;
+  justify-self: center;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.footerendereco p {
+  margin: 10px 0;
+}
+
+.footersocialmedia {
+  color: #ffffff;
+  text-align: center; /* Alinha o texto ao centro dentro das colunas */
+}
+
+.footerindex {
+  border-top: 2px solid #ccc;
+  text-align: left;
+  justify-self: center;
+}
+
+.logo-img {
+  width: 50%; /* Ajusta o tamanho da imagem do logo conforme necessário */
+  display: block;
+  margin: 0 auto; /* Centraliza a imagem */
+}
+
+.footer-nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-item,
+.nav-link {
+  display: block;
+  font-size: 16px;
+  color: #ffffff; /* Ajuste a cor do texto conforme necessário */
+  text-decoration: none;
+  margin: 10px 0;
+  transition: color 0.3s ease-in-out;
+}
+
+.contact-item:hover,
+.nav-link:hover {
+  color: #0dceda; /* Ajuste a cor do texto ao passar o mouse conforme necessário */
+}
+
+@media (max-width: 768px) {
+  .section6 {
+    grid-template-columns: 1fr; /* Ajusta para uma coluna em telas menores */
+    height: auto; /* Ajusta a altura automaticamente em telas menores */
+    padding-left: 2em;
+    padding-top: 10vh;
+    padding-right: 2em;
+    padding-bottom: 2vh;
+  }
+
+  .footerendereco,
+  .footer-contact,
+  .footersocialmedia,
+  .footerindex {
+    text-align: center; /* Centraliza o texto em dispositivos móveis */
+  }
+
+  .logo-img {
+    width: 70%; /* Ajusta o tamanho do logo em telas menores */
+  }
+
+  .contact-item,
+  .nav-link {
+    font-size: 14px; /* Ajusta o tamanho da fonte para dispositivos móveis */
+  }
+}
+
+#greeting {
+  display: inline-block;
+  font-size: 2em;
+  color: #000; /* Ajuste a cor conforme necessário */
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 30px;
+  border-radius: 4px;
+  animation: slide 2s ease-in-out infinite;
+}
+
+@keyframes slide {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  10%,
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  #greeting {
+    font-size: 1em; /* Diminui o tamanho da fonte em dispositivos móveis */
+  }
+}
+
+.footersocialmedia {
+  text-align: center;
+  color: #ffffff;
+}
+
+.social-media-text {
+  font-size: 16px;
+  margin-bottom: 10px; /* Espaço entre o texto e os ícones */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center; /* Centraliza os ícones horizontalmente */
+  gap: 15px; /* Espaçamento entre os ícones */
+}
+
+.social-icon {
+  display: inline-block;
+  font-size: 24px; /* Tamanho dos ícones */
+  color: #ffffff; /* Cor dos ícones */
+  text-decoration: none; /* Remove o sublinhado dos links */
+  transition: color 0.3s ease-in-out;
+  transition: transform 1s;
+}
+
+.social-icon:hover {
+  color: #0dceda;
+  transform: rotate(360deg);
+  /* Cor dos ícones ao passar o mouse */
+}
+
+.grid-item5 {
+  align-items: center;
+  justify-items: center;
+  color: #ffffff;
+  font-size: 30px;
+  font-family: "newamsterdam";
+  text-decoration: underline;
+  transition: color 0.3s ease-in-out;
+}
+.grid-item5:hover {
+  color: #0dceda; /* Cor para links ao passar o mouse */
+}
+
+.grid-item5 a:visited {
+  color: rgb(255, 255, 255);
+  transition: color 0.3s ease-in-out;
+}
+
+.grid-item5 a:visited:hover {
+  color: #0dceda; /* Cor para links visitados ao passar o mouse */
+}
+
+/* sem isso lenis nao funciona no chrome nao sei pq */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
