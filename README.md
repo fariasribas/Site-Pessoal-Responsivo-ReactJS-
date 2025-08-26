@@ -1,6 +1,8 @@
 # Site Pessoal Responsivo (ReactJS)
 
 Este é o meu site pessoal desenvolvido em **React JS**, projetado para apresentar meus serviços, blog e projetos de forma moderna e responsiva.
+![](Assets/2025-08-26_13-29.png)
+![](Assets/2025-08-26_13-29.png)
 
 ## Funcionalidades
 
@@ -18,6 +20,7 @@ Este é o meu site pessoal desenvolvido em **React JS**, projetado para apresent
 - React Router para navegação
 - CSS personalizado para scroll e responsividade
 - Ferramentas de build: Create React App
+  ![](<Assets/Screenshot 2025-08-26 at 14-38-22 Farias Ribas - Serviços Digitais.png>)
 
 ## Como Rodar Localmente
 
@@ -26,6 +29,7 @@ Este é o meu site pessoal desenvolvido em **React JS**, projetado para apresent
 2. Entre na pasta do projeto:
 
 3. Instale as dependências:
+
 ```
 
 npm install
@@ -33,6 +37,7 @@ npm install
 ```
 
 4. Inicie o servidor de desenvolvimento:
+
 ```
 
 npm start
@@ -43,11 +48,13 @@ npm start
 
 ## Deploy
 
-O site pode ser hospedado em qualquer serviço compatível com **React CSR**, como **Netlify, Vercel ou GitHub Pages**.  
+O site pode ser hospedado em qualquer serviço compatível com **React CSR**, como **Netlify, Vercel ou GitHub Pages**.
+![](<Assets/Screenshot 2025-08-26 at 14-38-05 Farias Ribas - Serviços Digitais.png>)
 
 ## Contato
 
 - Meu e-mail: fariasribas@disroot.org
---- 
+
+---
 
 > Este projeto é um exemplo de site pessoal moderno e funcional, com foco em interatividade, design responsivo e experiência de usuário.
