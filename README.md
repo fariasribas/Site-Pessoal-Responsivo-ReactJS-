@@ -2,7 +2,7 @@
 
 Este é o meu site pessoal desenvolvido em **React JS**, projetado para apresentar meus serviços, blog e projetos de forma moderna e responsiva.
 ![](Assets/2025-08-26_13-29.png)
-![](Assets/2025-08-26_13-29.png)
+![](Assets/2025-08-26_14-37.png)
 
 ## Funcionalidades
 
